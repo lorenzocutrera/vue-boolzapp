@@ -15,7 +15,9 @@
 
     <header></header>
 
-    <main class="d-flex">
+
+    
+    <main id="app" class="d-flex">
         <div class="sidebar col-4 column">
 
             <div class="userbar d-flex debug">
@@ -32,12 +34,26 @@
             </div>
 
             <div class="input debug">
-
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
             </div>
 
             <div class="contacts debug">
-                <div class="contact">
+
+                <div class="contact  d-flex">
+                    <div v-for="avatar in contacts" class="img">
+                        {{contacts[0].avatar}}
+                    </div>
                     
+                    <div class="dati_user">
+                        <h3>{{contacts[0].name}}</h3> 
+                        <p>Ultimo messaggio inviato</p>
+                    </div>
+                    <div class="time">
+                        <span>12:00</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,14 +64,26 @@
 
             </div>
             <div class="main_chat debug">
+                <div class="container">
 
+                </div>
             </div>
-            <div class="footer_chat debug">
+            <div class="footer_chat center d-flex align-items-center debug">
+                <div class="smile">
 
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="invio">
+
+                  </div>
             </div>
         </div>
     </main>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
