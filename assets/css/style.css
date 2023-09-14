@@ -1,0 +1,58 @@
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+.debug{
+    border: 1px solid black;
+}
+body{
+    background-color: #d9dbd5;
+}
+
+header{
+    height: 150px;
+    background-color: #009788;
+}
+
+main{
+    width: 1000px;
+    height: 700px;
+    background-color: brown;
+    margin: auto;
+    margin-top: -50px;
+}
+
+
+/* SIDEBAR */
+.sidebar{
+    background-color: yellow;
+}
+
+.userbar{
+    height: 50px;
+}
+
+.chat{
+    background-image: url('./assets/img/mine.jpg');
+}
+.alertmex{
+    height: 50px;
+}
+.input{
+    height: 30px;
+}
+.contact{
+    height: 60px;
+}
+
+/* CHAT */
+.header_chat{
+    height: 50px;
+}
+.main_chat{
+    height: 600px;
+}
+.footer_chat{
+    height: 50px;
+}
