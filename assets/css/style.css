@@ -16,8 +16,8 @@ header{
 }
 
 main{
-    width: 1000px;
-    height: 700px;
+    width: 80%;
+    height: 800px;
     background-color: brown;
     margin: auto;
     margin-top: -50px;
@@ -26,18 +26,19 @@ main{
 
 /* SIDEBAR */
 .sidebar{
-    background-color: yellow;
+    background-color: white;
 }
 
 .userbar{
     height: 50px;
 }
 
-.chat{
+.main_chat{
     background-image: url('./assets/img/mine.jpg');
 }
 .alertmex{
     height: 50px;
+    background-color: #8edbfd;
 }
 .input{
     height: 30px;
