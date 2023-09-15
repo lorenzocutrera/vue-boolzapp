@@ -81,15 +81,15 @@
 
                 </div>
                 <!-- /.active_contact -->
-                <div v-on="messages in contacts" class="messages">
+                <div v-for="obj in contacts" class="messages">
                     <div class="sent">
-                        {{messages.[status.sent]}}
+                        {{obj.messages[obj.messages.length-1].message}}
                     </div>
-                    <div class="sent">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+                    <div v-for="obj in contacts" class="sent">
+                        {{obj.messages[obj.messages.length-1].message}}
                     </div>
-                    <div class="received">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+                    <div v-for="obj in contacts" class="received">
+                        {{obj.messages[obj.messages.length-1].message}}
                     </div>
 
                 </div>
