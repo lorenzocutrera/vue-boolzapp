@@ -43,7 +43,9 @@
                     </div>
                 </div>
                 <!-- /.notifications -->
-                <div class="searcharea"></div>
+                <div class="searcharea">
+                    <input type="text">
+                </div>
                 <!-- /.searcharea -->
                 <div class="contacts">
                     <div class="contact" :class="index === activeContact ? 'active' : ''"
@@ -55,11 +57,11 @@
                             {{contact.name}}
                         </div>
                     </div>
-
-
-
                 </div>
                 <!-- /.conacts -->
+
+
+                <!-- CHAT -->
             </div>
             <!-- /.left -->
             <div class="right">
@@ -79,12 +81,12 @@
 
                 </div>
                 <!-- /.active_contact -->
-                <div class="messages">
+                <div v-for='messages in contacts' class="messages">
                     <div class="sent">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+                        {{messages[message]}}
                     </div>
-                    <div class="sent">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+                    <div v-for='messages in contacts' class="sent">
+                        {{message}}
                     </div>
                     <div class="received">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
@@ -108,7 +110,7 @@
     </div>
     <!-- Development only cdn, disable in production -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-    <script src='./assets/js/app.js'></script>
+    <script src='./assets/js/main.js'></script>
 </body>
 
 </html>
