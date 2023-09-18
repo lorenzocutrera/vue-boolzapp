@@ -44,22 +44,18 @@
                 </div>
                 <!-- /.notifications -->
                 <div class="searcharea">
-                    <input style="width: 100%;" class="search" type="text" placeholder="Creca o inizia una nuove chat">
+                    <input type="text" v-model="value" v-on:keyup="search()">
                 </div>
                 <!-- /.searcharea -->
                 <div class="contacts">
                     <div class="contact" :class="index === activeContact ? 'active' : ''"
-                        v-for="(contact, index) in contacts">
+                        v-for="(contact, index) in filtered" @click="active(index)">
                         <div class="avatar">
                             <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                         </div>
-                        <div>
-                            <div class="text">
-                                {{contact.name}}
-                            </div>
-                            <div class="info_contact">Ultimo messagio inviato</div>
+                        <div class="text">
+                            {{contact.name}}
                         </div>
-
                     </div>
                 </div>
                 <!-- /.conacts -->
@@ -73,13 +69,9 @@
 
                     <div class="contact_details">
                         <div class="avatar">
-                            <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
+                            <img :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
                         </div>
-                        <div>
-                            <div class="name">{{me.name}}</div>
-                            <div class="info_contact">Ultimo accesso oggi alle:</div>
-                        </div>
-
+                        <div class="name">{{contacts[activeContact].name}}</div>
                     </div>
                     <div class="actions">
                         <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
@@ -89,23 +81,24 @@
 
                 </div>
                 <!-- /.active_contact -->
-                <div v-for="(obj, index) in contacts">
-                    <div v-for="message in obj.messages" class="messages">
-                        <div v-if="message.status === 'sent'" class="sent">
-                            {{message.message}}
-                        </div>
-                        <div v-if="message.status === 'received'" class="received">
-                            {{message.message}}
+                <div v-for="(obj, index) in contacts" :key="index">
+                    <div v-if="activeContact === index">
+                        <div v-for="message in obj.messages" class="messages">
+                            <div v-if="message.status === 'sent'" class="sent">
+                                {{message.message}}
+                            </div>
+                            <div v-if="message.status === 'received'" class="received">
+                                {{message.message}}
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- /.messages -->
                 <div class="toolbar">
                     <div class="emoji">
-                        <i class="fa-solid fa-smile    "></i>
+                        <i class="fa-solid fa-smile"></i>
                     </div>
-                    <input type="text">
+                    <input type="text" v-model="text" v-on:keyup.enter="addMessage()">
                     <div class="mic">
                         <i class="fa-solid fa-microphone"></i>
                     </div>

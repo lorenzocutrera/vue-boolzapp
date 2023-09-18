@@ -187,7 +187,9 @@ body {
     background-color: var(--bz-sand);
     display: flex;
     justify-content: space-around;
-    position: sticky;
+    position: absolute;
+    bottom: 0px;
+    
 }
 
 .toolbar input {
