@@ -42,7 +42,7 @@
 
                 <!-- CONTACTS -->
                 <div class="contacts column">
-                    <div v-for="contact in contacts" class="contact d-flex">
+                    <div v-for="contact in contacts" @click="" class="contact d-flex">
                         <div class="avatar">
                             <img :src="'./assets/img/avatar${contact.avatar}'.jpg" alt="">
                         </div>
@@ -62,10 +62,10 @@
                     <div class="contact_details d-flex">
 
                         <div class="avatar">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
+                            <img :src="'./assets/img/avatar${activeContact.avatar}'.jpg" alt="">
                         </div>
                         <div class="name">
-                            <h3></h3>
+                            <h3>{{activeContact.name}}</h3>
                             <p>Ultimo accesso oggi alle 12:00</p>
                         </div>
 
