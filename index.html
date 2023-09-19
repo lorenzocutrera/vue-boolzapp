@@ -13,104 +13,45 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body class="debug">
-    <div id='app'>
-        <div class="wrapper">
-            <div class="left">
-                <div class="user">
-                    <div class="me">
-                        <div class="avatar">
-                            <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
-                        </div>
-                        <div class="name">{{me.name}}</div>
-                    </div>
-                    <div class="actions">
-                        <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
-                        <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
-                        <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
-                    </div>
+<body>
+    <div id="app">
+        <div class="web_app d-flex">
+            <div class="left col-4 column">
+                <div class="user"></div>
+
+                <div class="notifiche"></div>
+
+                <div class="search">
+                    <input type="text">
                 </div>
-                <!-- /.user -->
-                <div class="notifications">
-                    <div class="bell">
-                        <i class="fa-solid fa-bell-slash fa-lg fa-fw"></i>
-                    </div>
-                    <div class="text">
-                        <p>Ricevi notifiche di nuovi messaggi</p>
-                        <a href="#">
-                            Attiva notifiche desktop
-                        </a>
-                    </div>
-                </div>
-                <!-- /.notifications -->
-                <div class="searcharea">
-                    <input type="text" v-model="value" v-on:keyup="search()">
-                </div>
-                <!-- /.searcharea -->
+
                 <div class="contacts">
-                    <div class="contact" :class="index === activeContact ? 'active' : ''"
-                        v-for="(contact, index) in filtered" @click="active(index)">
-                        <div class="avatar">
-                            <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
-                        </div>
-                        <div class="text">
-                            {{contact.name}}
-                        </div>
-                    </div>
+                    <div class="contact"></div>
                 </div>
-                <!-- /.conacts -->
-
-
-                <!-- CHAT -->
             </div>
-            <!-- /.left -->
-            <div class="right">
-                <div class="active_contact">
 
-                    <div class="contact_details">
-                        <div class="avatar">
-                            <img :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
-                        </div>
-                        <div class="name">{{contacts[activeContact].name}}</div>
+            <div class="righ col-8 column">
+                <div class="activeContact"></div>
+
+                <div class="backg">
+                    <div class="container messages">
+
+                        <div class="message"></div>
+                        <div class="message"></div>
                     </div>
-                    <div class="actions">
-                        <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
-                        <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
-                        <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
-                    </div>
+                </div>
+
+                <div class="toolbar d-flex">
+
+                    <div class="emoji"></div>
+                    <input type="text">
+                    <div class="mic"></div>
 
                 </div>
-                <!-- /.active_contact -->
-                <div v-for="(obj, index) in contacts" :key="index">
-                    <div v-if="activeContact === index">
-                        <div v-for="message in obj.messages" class="messages">
-                            <div v-if="message.status === 'sent'" class="sent">
-                                {{message.message}}
-                            </div>
-                            <div v-if="message.status === 'received'" class="received">
-                                {{message.message}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.messages -->
-                <div class="toolbar">
-                    <div class="emoji">
-                        <i class="fa-solid fa-smile"></i>
-                    </div>
-                    <input type="text" v-model="text" v-on:keyup.enter="addMessage()">
-                    <div class="mic">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
-                </div>
-                <!-- /.toolbar -->
             </div>
-            <!-- /.right -->
         </div>
+
     </div>
-    <!-- Development only cdn, disable in production -->
-    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-    <script src='./assets/js/main.js'></script>
 </body>
 
 </html>
