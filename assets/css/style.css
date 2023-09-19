@@ -33,15 +33,64 @@ body
 
 .web_app{
     width: 80%;
-    margin: 100px auto;
-    height: calc(100% - 200px);
+    margin: 50px auto;
+    height: calc(100% - 100px);
     
 }
 
+.left{
+    background-color: cadetblue;
+}
+
+.user{
+width: 100%;
+height: 50px;
+justify-content: space-between;
+align-items: center;
+}
+i{
+    color: var(--bz-dark-gray);
+}
+.notifica{
+    width: 100%;
+    height: 50px;
+    background-color: var(--bz-sky);
+}
+.search{
+    width: 100%;
+    height: 30px;
+}
+.contact{
+    width: 100%;
+    min-height: 50px;
+}
+.avatar{
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50px;
+}
+p {
+        font-size: 10px;
+        color: var(--bz-dark-gray);
+    }
 
 
+img{
+width: 100%;
+border-radius: 50%;
+padding: 5px;
+}
 
+.activeContact{
+    justify-content: space-between;
+    align-items: center;
+}
 
+.backg{
+    width: 100%;
+    height: calc(100% - 100px);
+    background-image: url(../img/mine.jpg);
+}
 
 /*
 *{
